@@ -5,4 +5,19 @@ class TodosController < ApplicationController
     @user = User.find(1)
     render json: {finished_todos:@finished_todos, unfinished_todos:@unfinished_todos, user: @user}
   end
+
+  def create
+    @todo = User.find(params[:user_id]).todos.new(todo_params)
+    if @todo.save
+      render status: :created
+    else
+      render status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def todo_params
+    params.require(:todo).permit(:title, :description, :is_finished)
+  end
 end
