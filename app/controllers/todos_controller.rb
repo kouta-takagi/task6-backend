@@ -15,6 +15,21 @@ class TodosController < ApplicationController
     end
   end
 
+  def update
+    @todo = Todo.find(params[:id])
+    if @todo.update(todo_params)
+      render status: :ok
+    else
+      render status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @todo = Todo.find(params[:id])
+    @todo.destroy
+    render status: :ok
+  end
+
   private
 
   def todo_params
