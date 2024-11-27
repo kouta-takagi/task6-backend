@@ -8,7 +8,7 @@
 
 require 'faker'
 
-user = User.create(name: "kouta", email: "a@example.com")
+user = User.create(name: "kouta", email: "a@example.com", password: "foobar", password_confirmation: "foobar")
 
 user.todos.create(title: '洗濯', description: '迅速に', is_finished: true)
 user.todos.create(title: '皿洗い', description: '丁寧に', is_finished: true)
