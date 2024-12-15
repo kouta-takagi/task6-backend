@@ -1,24 +1,21 @@
-# README
+# 概要
+ユーザーがアカウントを作成し、ログインした後、自分専用のToDoリストを管理できるアプリケーション
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## テーブル設計
+### Usersテーブル
+- deviseで作成されたからカラム一式
+### Todosテーブル
+- **タイトル (title)**: 文字列
+- **詳細 (description)**: 文字列
+- **完了状況 (is_finished)**: 真偽値
+- **Usersテーブルの外部キー**
 
-Things you may want to cover:
+## 機能
+- **ユーザー認証機能**:  
+  ユーザーは新規登録、ログイン、ログアウトができる。各ユーザーは自分のToDoリストのみ閲覧・操作できる。
+- **Todoリスト機能**:  
+  認証済みユーザーは、自分のToDoアイテムを作成、閲覧、編集、削除できる各ToDoアイテムにはタイトル、内容、完了状態が含まれる。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用技術
+- **フロントエンド**: Next.js3.14.159
+- **バックエンド**: Ruby3.3.4, Rails7.0.8
